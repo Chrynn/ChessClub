@@ -1,0 +1,628 @@
+.login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.login__topic-wrap {
+  width: 500px;
+  background: #4e3030;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+}
+.login__topic {
+  width: 100%;
+  display: flex;
+  position: relative;
+  margin-top: 30px;
+}
+.login__center {
+  width: 450px;
+}
+.login__topic-heading-box {
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.login__topic-heading {
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+.login #frm-loginForm {
+  margin-top: 20px;
+}
+.login th,
+.login td,
+.login tr {
+  display: block;
+}
+.login tr:not(:first-child) {
+  margin-top: 20px;
+}
+.login th {
+  margin-bottom: 5px;
+}
+.login table {
+  width: 100%;
+}
+.login label {
+  display: block;
+  text-align: left;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  padding-left: 20px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+.login .text {
+  width: 90%;
+  margin: 0 auto;
+  height: 40px;
+  border-radius: 30px;
+  border: 1px solid white;
+  background: none;
+  padding: 0 20px;
+  display: block;
+  outline: none;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+}
+.login .error {
+  width: 100%;
+  list-style: none;
+}
+.login li {
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  color: #ff1d1d;
+}
+.login .button {
+  margin: 40px auto;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  background: #6BBC00;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 50px;
+  display: block;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.22s;
+}
+.login .button:hover {
+  background: #7fe000;
+  transition: 0.22s;
+}
+.login__column {
+  margin-top: 18vh;
+  z-index: 2;
+}
+.login__column-heading {
+  font-size: 50px;
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0.5;
+  margin-bottom: 30px;
+}
+
+.dashboard {
+  padding-bottom: 50px;
+}
+.dashboard__heading-main {
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  margin: 30px 0 0 0;
+  font-size: 50px;
+  opacity: 0.2;
+}
+.dashboard__stats {
+  margin-top: 50px;
+  width: 100%;
+  height: 100%;
+}
+.dashboard__column-one, .dashboard__column-two, .dashboard__column-three, .dashboard__column-four {
+  width: 25%;
+}
+.dashboard__topic {
+  text-align: center;
+  font-style: normal;
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+.dashboard__topic--success {
+  color: #6BBC00;
+}
+.dashboard__topic--failure {
+  color: #ff1d1d;
+}
+.dashboard__circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin: 40px auto 0 auto;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard__number {
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 70px;
+  opacity: 0.5;
+}
+.dashboard__best-game {
+  margin-top: 70px;
+}
+.dashboard__heading {
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+.dashboard__table-wrap {
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  background: white;
+  border-radius: 13px;
+}
+.dashboard__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.dashboard__table-text {
+  text-align: center;
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  border: 1px solid #f3f3f3;
+  height: 40px;
+}
+.dashboard__table-text--success {
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  color: #6BBC00;
+  width: 50%;
+}
+.dashboard__table-text--failure {
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  color: #ff1d1d;
+  width: 50%;
+}
+.dashboard__table-text--special {
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+.dashboard__table-text--colored {
+  color: #4dafff;
+}
+.dashboard__table-text--moves {
+  width: 10%;
+}
+.dashboard__table-text--color {
+  width: 10%;
+}
+.dashboard__table-text--nick {
+  width: 25%;
+}
+
+.top-players {
+  padding-bottom: 50px;
+}
+.top-players__heading-main {
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  margin: 30px 0 0 0;
+  font-size: 50px;
+  opacity: 0.2;
+}
+.top-players__content {
+  margin-top: 50px;
+}
+.top-players__heading {
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.top-players__heading--success {
+  color: #6BBC00;
+}
+.top-players__heading--failure {
+  color: #ff1d1d;
+}
+.top-players__column-one {
+  width: 700px;
+}
+.top-players__column-two {
+  width: 100%;
+  margin-left: 30px;
+}
+.top-players__table-wrap {
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  background: white;
+  border-radius: 13px;
+}
+.top-players__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.top-players__table-text {
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #f3f3f3;
+  height: 40px;
+}
+.top-players__table-text--special {
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+.top-players__table-text--colored {
+  color: #4dafff;
+}
+.top-players__table-text--moves {
+  width: 15%;
+}
+.top-players__table-text--nick {
+  width: 25%;
+}
+.top-players__table-text--date {
+  width: 20%;
+}
+.top-players__highest-moves {
+  margin-top: 40px;
+}
+
+.settings {
+  padding-bottom: 50px;
+}
+.settings__heading-main {
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  margin: 30px 0 0 0;
+  font-size: 50px;
+  opacity: 0.2;
+}
+.settings fieldset {
+  border: none;
+}
+.settings fieldset:not(:first-child) {
+  margin-top: 20px;
+}
+.settings tbody {
+  display: flex;
+  width: 100%;
+}
+.settings table {
+  width: 100%;
+}
+.settings label {
+  display: block;
+  text-align: left;
+  cursor: pointer;
+  margin-bottom: 5px;
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+.settings th,
+.settings td,
+.settings tr {
+  display: block;
+  width: 100%;
+}
+.settings tr:not(:first-child) {
+  margin-left: 20px;
+}
+.settings .text {
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.settings .text.small {
+  width: 49.5%;
+}
+.settings .text.readonly {
+  opacity: 0.5;
+}
+.settings .button {
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  background: #6BBC00;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 30px;
+  display: block;
+  cursor: pointer;
+  transition: 0.22s;
+  text-decoration: none;
+}
+.settings .button:hover {
+  background: #7fe000;
+  transition: 0.22s;
+}
+.settings__form-one, .settings__form-two {
+  margin-top: 50px;
+}
+.settings__heading {
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.settings .error {
+  margin-top: 5px;
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  display: block;
+  color: #ff1d1d;
+}
+
+.header {
+  width: 100%;
+  height: 70px;
+  background: #4e3030;
+  position: fixed;
+  z-index: 10;
+}
+.header__navigation {
+  width: 100%;
+  height: 70px;
+}
+.header__column-one, .header__column-two {
+  width: 50%;
+  height: 100%;
+}
+.header__column-two {
+  display: flex;
+  justify-content: flex-end;
+}
+.header__logo-box {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.header__logo {
+  font-size: 30px;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  opacity: 0.7;
+}
+.header__nickname-box {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+.header__nickname {
+  font-size: 20px;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+}
+.header__button-box {
+  display: flex;
+  align-items: center;
+}
+.header__button {
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  background: #FF7171;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 50px;
+  display: block;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.22s;
+  text-decoration: none;
+}
+.header__button:hover {
+  background: #ff1d1d;
+  transition: 0.22s;
+}
+
+.footer {
+  background: #4e3030;
+  padding: 50px 0 70px 0;
+}
+.footer__heading {
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  opacity: 0.7;
+}
+.footer__text {
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.menu {
+  padding-top: 100px;
+}
+.menu__column-one {
+  width: 100%;
+  height: 50px;
+}
+.menu__column-two {
+  width: 50px;
+  height: 50px;
+}
+.menu__list {
+  display: flex;
+}
+.menu__item {
+  height: 50px;
+  list-style: none;
+  transition: 0.22s;
+  border-radius: 10px;
+}
+.menu__item:not(:last-child) {
+  margin-right: 5px;
+}
+.menu__link {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0 20px;
+  background: #4e3030;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+}
+.menu__link:hover {
+  background: #6BBC00;
+  transition: 0.22s;
+}
+.menu__link--active {
+  background: #4dafff;
+}
+.menu__settings {
+  height: 50px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.22s;
+}
+.menu__link-settings {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #4e3030;
+  border-radius: 10px;
+}
+.menu__link-settings:hover {
+  background: #6BBC00;
+  transition: 0.22s;
+}
+.menu__link-settings--active {
+  background: #4dafff;
+}
+.menu__image-settings {
+  height: 25px;
+  width: 25px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-wrap {
+  height: 100%;
+  width: 100%;
+  background: #f3f3f3;
+}
+
+.container-intern {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.flexer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.background-icon-box {
+  position: absolute;
+  height: 90%;
+  width: auto;
+  bottom: 0;
+  right: 25%;
+  z-index: 1;
+}
+.background-icon-box .background-icon {
+  height: 100%;
+  width: 100%;
+  opacity: 0.1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.flash {
+  height: 40px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: fixed;
+  top: 15px;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.33s;
+}
+.flash__content {
+  height: 100%;
+  background: #6BBC00;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  border-radius: 10px;
+}
+.flash__text {
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+.flash.visible {
+  visibility: visible;
+  opacity: 1;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,102 @@
+.settings {
+    padding-bottom: 50px;
+
+    &__heading-main {
+        @include darkRegular;
+        margin: 30px 0 0 0;
+        font-size: 50px;
+        opacity: 0.2;
+    }
+
+    fieldset {
+        border: none;
+
+        &:not(:first-child) {
+            margin-top: 20px;
+        }
+    }
+
+    tbody {
+        display: flex;
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    label {
+        display: block;
+        text-align: left;
+        cursor: pointer;
+        margin-bottom: 5px;
+        @include darkRegular;
+    }
+
+    th,
+    td,
+    tr {
+        display: block;
+        width: 100%;
+    }
+
+    tr {
+        &:not(:first-child) {
+            margin-left: 20px;
+        }
+    }
+
+    .text {
+        @include darkThin;
+        font-size: 18px;
+        outline: none;
+        border: none;
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 10px;
+
+        &.small {
+            width: 49.5%;
+        }
+
+        &.readonly {
+            opacity: 0.5;
+        }
+    }
+
+    .button {
+        @include lightThin;
+        font-size: 16px;
+        background: $colorQuinary;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 30px;
+        display: block;
+        cursor: pointer;
+        transition: 0.22s;
+        text-decoration: none;
+
+        &:hover {
+            background: $shadeQuinary;
+            transition: 0.22s;
+        }
+    }
+
+
+    &__form-one,
+    &__form-two {
+        margin-top: 50px;
+    }
+
+    &__heading {
+        @include darkRegular;
+        margin-bottom: 20px;
+    }
+
+    .error {
+        margin-top: 5px;
+        @include darkThin;
+        display: block;
+        color: $shadeQuaternary;
+    }
+}

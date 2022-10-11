@@ -1,0 +1,71 @@
+{varType App\Model\Database\Entity\UserEntity $loggedUser}
+{varType array $userStats}
+{varType array $userBest}
+{block content}
+
+<div class="dashboard">
+    <div class="container-intern">
+        <h1 class="dashboard__heading-main" n:block="title">Dashboard</h1>
+        <div class="dashboard__stats">
+            <div class="flexer">
+                <div class="dashboard__column-one">
+                    <h2 class="dashboard__topic"><i class="dashboard__topic dashboard__topic--success">Win</i> count</h2>
+                    <div class="dashboard__circle">
+                        <h2 class="dashboard__number">{$userStats["wins"]}</h2>
+                    </div>
+                </div>
+                <div class="dashboard__column-two">
+                    <h2 class="dashboard__topic"><i class="dashboard__topic dashboard__topic--failure">Lose</i> count</h2>
+                    <div class="dashboard__circle">
+                        <h2 class="dashboard__number">{$userStats["loses"]}</h2>
+                    </div>
+                </div>
+                <div class="dashboard__column-three">
+                    <h2 class="dashboard__topic">Wins as black</h2>
+                    <div class="dashboard__circle">
+                        <h2 class="dashboard__number">{$userStats["winsAsBlack"]}</h2>
+                    </div>
+                </div>
+                <div class="dashboard__column-four">
+                    <h2 class="dashboard__topic">Wins as white</h2>
+                    <div class="dashboard__circle">
+                        <h2 class="dashboard__number">{$userStats["winsAsWhite"]}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard__best-game">
+            <h2 class="dashboard__heading">Your best game</h2>
+            <div class="dashboard__table-wrap">
+                <table class="dashboard__table">
+                    <tr>
+                        <td colspan="3" class="dashboard__table-text dashboard__table-text--success">won</td>
+                        <td colspan="3" class="dashboard__table-text dashboard__table-text--failure">lost</td>
+                    </tr>
+                    <tr>
+                        <td class="dashboard__table-text dashboard__table-text--special dashboard__table-text--moves">moves</td>
+                        <td class="dashboard__table-text dashboard__table-text--special dashboard__table-text--color">color</td>
+                        <td class="dashboard__table-text dashboard__table-text--special dashboard__table-text--nick">nickname</td>
+                        <td class="dashboard__table-text dashboard__table-text--special dashboard__table-text--nick">nickname</td>
+                        <td class="dashboard__table-text dashboard__table-text--special dashboard__table-text--color">color</td>
+                        <td class="dashboard__table-text dashboard__table-text--special dashboard__table-text--moves">moves</td>
+                    </tr>
+                    {if !empty($userBest)}
+                        <tr>
+                            <td class="dashboard__table-text">{$userBest["playerWonMoves"]}</td>
+                            <td class="dashboard__table-text">{$userBest["playerWonColor"]}</td>
+                            <td class="dashboard__table-text{if $userBest["playerWon"]->getId() === $loggedUser->getId()} dashboard__table-text--colored{/if}">{$userBest["playerWon"]->getNickname()}</td>
+                            <td class="dashboard__table-text">{$userBest["playerLost"]->getNickname()}</td>
+                            <td class="dashboard__table-text">{$userBest["playerLostColor"]}</td>
+                            <td class="dashboard__table-text">{$userBest["playerLostMoves"]}</td>
+                        </tr>
+                    {else}
+                        <tr>
+                            <td colspan="6" class="dashboard__table-text">Not enough of data</td>
+                        </tr>
+                    {/if}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

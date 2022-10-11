@@ -1,0 +1,4 @@
+services:
+	- App\Model\Facade\Auth\AuthorizationFacade
+	- App\Model\Facade\Auth\AuthenticationFacade
+	- App\Model\Service\Match\MatchFacade

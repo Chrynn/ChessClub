@@ -1,0 +1,40 @@
+# NEON syntaxe characters are # " ' , : = - [ ] { } ( )
+-
+	nickname: webwings
+	password: webwings123
+-
+	nickname: nick
+	password: nick123
+-
+	nickname: mike
+	password: mike123
+-
+	nickname: paul
+	password: paul123
+-
+	nickname: dave
+	password: dave123
+-
+	nickname: john
+	password: john123
+-
+	nickname: serena
+	password: serena123
+-
+	nickname: theresa
+	password: theresa123
+-
+	nickname: monica
+	password: monica123
+-
+	nickname: olaf
+	password: olaf123
+-
+	nickname: lucas
+	password: lucas123
+-
+	nickname: monte
+	password: monte123
+-
+	nickname: verone
+	password: verone123

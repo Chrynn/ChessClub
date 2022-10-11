@@ -1,0 +1,113 @@
+{varType App\Model\Database\Entity\UserEntity $loggedUser}
+{varType array $bestMatch}
+{varType array $worstMatch}
+{block content}
+
+<div class="top-players">
+    <div class="container-intern">
+        <h1 class="top-players__heading-main" n:block="title">Top players</h1>
+        <div class="top-players__content">
+            <div class="flexer">
+                <div class=top-players__column-one>
+                    <h2 class="top-players__heading">Top 10</h2>
+                    <div class="top-players__table-wrap">
+                        <table class="top-players__table">
+                            <tr>
+                                <td class="top-players__table-text top-players__table-text--special">wins</td>
+                                <td class="top-players__table-text top-players__table-text--special">nickname</td>
+                            </tr>
+                            <tr>
+                                <td class="top-players__table-text"></td>
+                                <td class="top-players__table-text"></td>
+                            </tr>
+                            <tr>
+                                <td class="top-players__table-text"></td>
+                                <td class="top-players__table-text"></td>
+                            </tr>
+                            <tr>
+                                <td class="top-players__table-text"></td>
+                                <td class="top-players__table-text"></td>
+                            </tr>
+                            <tr>
+                                <td class="top-players__table-text"></td>
+                                <td class="top-players__table-text"></td>
+                            </tr>
+                            <tr>
+                                <td class="top-players__table-text"></td>
+                                <td class="top-players__table-text"></td>
+                            </tr>
+                            <tr>
+                                <td class="top-players__table-text"></td>
+                                <td class="top-players__table-text"></td>
+                            </tr>
+                            <tr>
+                                <td class="top-players__table-text"></td>
+                                <td class="top-players__table-text"></td>
+                            </tr>
+                            <tr>
+                                <td class="top-players__table-text"></td>
+                                <td class="top-players__table-text"></td>
+                            </tr>
+                            <tr>
+                                <td class="top-players__table-text"></td>
+                                <td class="top-players__table-text"></td>
+                            </tr>
+                            <tr>
+                                <td class="top-players__table-text"></td>
+                                <td class="top-players__table-text"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="top-players__column-two">
+                    <div class="top-players__lowest-moves">
+                        <h2 class="top-players__heading"><i class="top-players__heading top-players__heading--success">Lowest</i> moves</h2>
+                        <div class="top-players__table-wrap">
+                            <table class="top-players__table">
+                                <tr>
+                                    <td class="top-players__table-text top-players__table-text--special top-players__table-text--moves">moves</td>
+                                    <td class="top-players__table-text top-players__table-text--special top-players__table-text--nick">won</td>
+                                    <td class="top-players__table-text top-players__table-text--special top-players__table-text--nick">lost</td>
+                                    <td class="top-players__table-text top-players__table-text--special top-players__table-text--moves">moves</td>
+                                    <td class="top-players__table-text top-players__table-text--special top-players__table-text--date">date</td>
+                                </tr>
+                                {if !empty($bestMatch)}
+                                    <tr>
+                                        <td class="top-players__table-text">{$bestMatch["playerWonMoves"]}</td>
+                                        <td class="top-players__table-text{if $bestMatch["playerWon"]->getId() === $loggedUser->getId()} top-players__table-text--colored{/if}">{$bestMatch["playerWon"]->getNickname()}</td>
+                                        <td class="top-players__table-text{if $bestMatch["playerLost"]->getId() === $loggedUser->getId()} top-players__table-text--colored{/if}">{$bestMatch["playerLost"]->getNickname()}</td>
+                                        <td class="top-players__table-text">{$bestMatch["playerLostMoves"]}</td>
+                                        <td class="top-players__table-text">{$bestMatch["date"]|date:"d. m. y - H:i"}</td>
+                                    </tr>
+                                {/if}
+                            </table>
+                        </div>
+                    </div>
+                    <div class="top-players__highest-moves">
+                        <h2 class="top-players__heading"><i class="top-players__heading top-players__heading--failure">Highest</i> moves</h2>
+                        <div class="top-players__table-wrap">
+                            <table class="top-players__table">
+                                <tr>
+                                    <td class="top-players__table-text top-players__table-text--special top-players__table-text--moves">moves</td>
+                                    <td class="top-players__table-text top-players__table-text--special top-players__table-text--nick">won</td>
+                                    <td class="top-players__table-text top-players__table-text--special top-players__table-text--nick">lost</td>
+                                    <td class="top-players__table-text top-players__table-text--special top-players__table-text--moves">moves</td>
+                                    <td class="top-players__table-text top-players__table-text--special top-players__table-text--date">date</td>
+                                </tr>
+                                {if !empty($worstMatch)}
+                                    <tr>
+                                        <td class="top-players__table-text">{$worstMatch["playerWonMoves"]}</td>
+                                        <td class="top-players__table-text{if $worstMatch["playerWon"]->getId() === $loggedUser->getId()} top-players__table-text--colored{/if}">{$worstMatch["playerWon"]->getNickname()}</td>
+                                        <td class="top-players__table-text{if $worstMatch["playerLost"]->getId() === $loggedUser->getId()} top-players__table-text--colored{/if}">{$worstMatch["playerLost"]->getNickname()}</td>
+                                        <td class="top-players__table-text">{$worstMatch["playerLostMoves"]}</td>
+                                        <td class="top-players__table-text">{$worstMatch["date"]|date:"d. m. y - H:i"}</td>
+                                    </tr>
+                                {/if}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

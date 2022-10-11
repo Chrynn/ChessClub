@@ -1,0 +1,4 @@
+services:
+    - App\Module\Login\components\LoginForm\LoginFormFactory
+    - App\Module\User\Settings\SettingsForm\SettingsFormFactory
+    - App\Module\User\Settings\PasswordForm\PasswordFormFactory

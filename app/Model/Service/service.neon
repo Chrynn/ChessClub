@@ -1,0 +1,5 @@
+services:
+	- App\Router\RouterFactory::createRouter
+
+	- App\Model\Service\User\UserService
+	- App\Model\Service\Match\MatchService

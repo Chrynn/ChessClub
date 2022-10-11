@@ -1,0 +1,17 @@
+        /* Moviebase project license *\
+  
+--------------------------------------------------  
+
+1. Author allows user of repository to:
+  - view the source code & get indistinctly inspired
+  - suggest changes to the author
+
+--------------------------------------------------
+
+2. Atuhor disallows user of repository to:
+  - publish the source code for money profit purposes
+  - share without approval of author
+
+--------------------------------------------------
+
+       \* created & valid from 12.9.2022 */

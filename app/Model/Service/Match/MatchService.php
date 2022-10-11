@@ -1,0 +1,103 @@
+<?php declare(strict_types = 1);
+
+namespace App\Model\Service\Match;
+
+use App\Model\Database\Entity\MatchEntity;
+use Doctrine\ORM\EntityManagerInterface;
+
+final class MatchService implements IMatchService
+{
+
+	public function __construct(
+		private readonly EntityManagerInterface $entityManager
+	) {}
+
+
+	public function getWinsByUser(int $userId): ?int
+	{
+		return (int) $this->entityManager->createQueryBuilder()
+			->select("COUNT(m.id)")
+			->from(MatchEntity::class, "m")
+			->where("m.playerWon = :player")
+			->setParameter("player", $userId)
+			->getQuery()
+			->getSingleScalarResult();
+	}
+
+
+	public function getLosesByUser(int $userId): ?int
+	{
+		return (int) $this->entityManager->createQueryBuilder()
+			->select("COUNT(m.id)")
+			->from(MatchEntity::class, "m")
+			->where("m.playerLost = :player")
+			->setParameter("player", $userId)
+			->getQuery()
+			->getSingleScalarResult();
+	}
+
+
+	public function getWinsAsBlackByUser(int $userId): ?int
+	{
+		return (int) $this->entityManager->createQueryBuilder()
+			->select("COUNT(m.id)")
+			->from(MatchEntity::class, "m")
+			->where("m.playerWon = :player")
+			->andWhere("m.playerWonColor = :color")
+			->setParameters(["player" => $userId, "color" => "black"])
+			->getQuery()
+			->getSingleScalarResult();
+	}
+
+
+	public function getWinsAsWhiteByUser(int $userId): ?int
+	{
+		return (int) $this->entityManager->createQueryBuilder()
+			->select("COUNT(m.id)")
+			->from(MatchEntity::class, "m")
+			->where("m.playerWon = :player")
+			->andWhere("m.playerWonColor = :color")
+			->setParameters(["player" => $userId, "color" => "white"])
+			->getQuery()
+			->getSingleScalarResult();
+	}
+
+
+	public function getBestGameByUser(int $userId): ?MatchEntity
+	{
+		return $this->entityManager->createQueryBuilder()
+			->select("m")
+			->from(MatchEntity::class, "m")
+			->where("m.playerWon = :player")
+			->setParameter("player", $userId)
+			->orderBy("m.playerWonMoves", "ASC")
+			->setMaxResults(1)
+			->getQuery()
+			->getOneOrNullResult();
+	}
+
+
+	public function getBestMatch(): ?MatchEntity
+	{
+		return $this->entityManager->createQueryBuilder()
+			->select("m")
+			->from(MatchEntity::class, "m")
+			->orderBy("m.playerWonMoves", "ASC")
+			->setMaxResults(1)
+			->getQuery()
+			->getOneOrNullResult();
+	}
+
+
+	public function getWorstMatch(): ?MatchEntity
+	{
+		return $this->entityManager->createQueryBuilder()
+			->select("m")
+			->from(MatchEntity::class, "m")
+			->orderBy("m.playerWonMoves", "DESC")
+			->setMaxResults(1)
+			->getQuery()
+			->getOneOrNullResult();
+	}
+
+}

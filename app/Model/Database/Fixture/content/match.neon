@@ -1,0 +1,35 @@
+-
+	playerOne: 1
+	playerTwo: 2
+	playerOneColor: white
+	playerTwoColor: black
+	playerOneMoves: 13
+	playerTwoMoves: 12
+-
+	playerOne: 1
+	playerTwo: 3
+	playerOneColor: white
+	playerTwoColor: black
+	playerOneMoves: 15
+	playerTwoMoves: 14
+-
+	playerOne: 2
+	playerTwo: 1
+	playerOneColor: white
+	playerTwoColor: black
+	playerOneMoves: 39
+	playerTwoMoves: 40
+-
+	playerOne: 7
+	playerTwo: 1
+	playerOneColor: white
+	playerTwoColor: black
+	playerOneMoves: 8
+	playerTwoMoves: 7
+-
+	playerOne: 5
+	playerTwo: 7
+	playerOneColor: white
+	playerTwoColor: black
+	playerOneMoves: 5
+	playerTwoMoves: 4
