@@ -10,16 +10,19 @@ use App\Module\User\Settings\SettingsForm\SettingsFormFactory;
 use App\Module\User\UserPresenter;
 use Nette\Application\UI\Form;
 
-class SettingsPresenter extends UserPresenter
+final class SettingsPresenter extends UserPresenter
 {
 
 	public function __construct(
 		private readonly AuthorizationFacade $authorizationFacade,
 		private readonly SettingsFormFactory $settingsFormFactory,
 		private readonly PasswordFormFactory $passwordFormFactory
+
 	)
 	{
-		parent::__construct($authorizationFacade);
+		parent::__construct(
+			$authorizationFacade
+		);
 	}
 
 

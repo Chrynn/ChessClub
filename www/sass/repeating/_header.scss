@@ -10,6 +10,12 @@
         height: 70px;
     }
 
+    &__content {
+        display: flex;
+        height: 100%;
+        width: 100%;
+    }
+
     &__column-one,
     &__column-two {
         width: 50%;
@@ -55,16 +61,26 @@
         background: $colorQuaternary;
         border: none;
         border-radius: 10px;
-        padding: 10px 50px;
-        display: block;
         text-transform: uppercase;
         cursor: pointer;
         transition: 0.22s;
         text-decoration: none;
+        padding: 0 30px;
+        display: flex;
+        align-items: center;
+        height: 45px;
 
         &:hover {
             background: $shadeQuaternary;
             transition: 0.22s;
         }
+    }
+
+    &__hamburger {
+        display: none;
+    }
+
+    &__wrap {
+        display: flex;
     }
 }

@@ -7,7 +7,7 @@
     <div class="container-intern">
         <h1 class="dashboard__heading-main" n:block="title">Dashboard</h1>
         <div class="dashboard__stats">
-            <div class="flexer">
+            <div class="dashboard__block">
                 <div class="dashboard__column-one">
                     <h2 class="dashboard__topic"><i class="dashboard__topic dashboard__topic--success">Win</i> count</h2>
                     <div class="dashboard__circle">
@@ -20,6 +20,8 @@
                         <h2 class="dashboard__number">{$userStats["loses"]}</h2>
                     </div>
                 </div>
+            </div>
+            <div class="dashboard__block">
                 <div class="dashboard__column-three">
                     <h2 class="dashboard__topic">Wins as black</h2>
                     <div class="dashboard__circle">
@@ -35,7 +37,7 @@
             </div>
         </div>
         <div class="dashboard__best-game">
-            <h2 class="dashboard__heading">Your best game</h2>
+            <h2 class="dashboard__heading">Your <i class="dashboard__heading dashboard__heading--success">best</i> match</h2>
             <div class="dashboard__table-wrap">
                 <table class="dashboard__table">
                     <tr>
@@ -50,20 +52,18 @@
                         <td class="dashboard__table-text dashboard__table-text--special dashboard__table-text--color">color</td>
                         <td class="dashboard__table-text dashboard__table-text--special dashboard__table-text--moves">moves</td>
                     </tr>
-                    {if !empty($userBest)}
-                        <tr>
+                    <tr>
+                        {if $userBest !== NULL}
                             <td class="dashboard__table-text">{$userBest["playerWonMoves"]}</td>
                             <td class="dashboard__table-text">{$userBest["playerWonColor"]}</td>
                             <td class="dashboard__table-text{if $userBest["playerWon"]->getId() === $loggedUser->getId()} dashboard__table-text--colored{/if}">{$userBest["playerWon"]->getNickname()}</td>
                             <td class="dashboard__table-text">{$userBest["playerLost"]->getNickname()}</td>
                             <td class="dashboard__table-text">{$userBest["playerLostColor"]}</td>
                             <td class="dashboard__table-text">{$userBest["playerLostMoves"]}</td>
-                        </tr>
-                    {else}
-                        <tr>
-                            <td colspan="6" class="dashboard__table-text">Not enough of data</td>
-                        </tr>
-                    {/if}
+                        {else}
+                            <td colspan="6" class="dashboard__table-text">not enough of data</td>
+                        {/if}
+                    </tr>
                 </table>
             </div>
         </div>

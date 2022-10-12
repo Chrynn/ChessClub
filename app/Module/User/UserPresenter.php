@@ -5,14 +5,16 @@ namespace App\Module\User;
 use App\Model\Facade\Auth\AuthorizationFacade;
 use App\Module\ModulePresenter;
 
-class UserPresenter extends ModulePresenter
+abstract class UserPresenter extends ModulePresenter
 {
 
 	public function __construct(
 		private readonly AuthorizationFacade $authorizationFacade
 	)
 	{
-		parent::__construct($this->authorizationFacade);
+		parent::__construct(
+			$authorizationFacade
+		);
 	}
 
 

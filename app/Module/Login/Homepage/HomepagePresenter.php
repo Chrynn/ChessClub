@@ -8,15 +8,17 @@ use App\Module\Login\components\LoginForm\LoginFormFactory;
 use App\Module\Login\LoginPresenter;
 use Nette\Application\UI\Form;
 
-class HomepagePresenter extends LoginPresenter
+final class HomepagePresenter extends LoginPresenter
 {
 
 	public function __construct(
 		private readonly LoginFormFactory $loginFormFactory,
-		private readonly AuthorizationFacade $authorizationFacade
+		AuthorizationFacade $authorizationFacade
 	)
 	{
-		parent::__construct($this->authorizationFacade);
+		parent::__construct(
+			$authorizationFacade
+		);
 	}
 
 

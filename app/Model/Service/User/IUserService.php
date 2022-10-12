@@ -16,4 +16,23 @@ interface IUserService
 
 	public function getUserById(int $userId): ?UserEntity;
 
+	/**
+	 * @return array<int, UserEntity>
+	 */
+	public function getUsersByWin(int $limit): array;
+
+	public function getWinCountByUser(int $userId): ?int;
+
+	public function getLoseCountByUser(int $userId): ?int;
+
+	public function getWinsAsBlackByUser(int $userId): ?int;
+
+	public function getWinsAsWhiteByUser(int $userId): ?int;
+
+	public function setPlayerWin(int $playerId): void;
+
+	public function setPlayerLose(int $playerId): void;
+
+	public function setPlayerWinColor(int $playerId, string $playerColor): void;
+
 }

@@ -3,9 +3,21 @@
 
     &__heading-main {
         @include darkRegular;
-        margin: 30px 0 0 0;
         font-size: 50px;
         opacity: 0.2;
+    }
+
+    &__heading-side {
+        @include darkThin;
+        font-size: 20px;
+        opacity: 0.5;
+    }
+
+    &__heading-wrap {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0 0 0;
+        align-items: flex-end;
     }
 
     fieldset {

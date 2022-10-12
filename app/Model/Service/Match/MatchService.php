@@ -13,56 +13,6 @@ final class MatchService implements IMatchService
 	) {}
 
 
-	public function getWinsByUser(int $userId): ?int
-	{
-		return (int) $this->entityManager->createQueryBuilder()
-			->select("COUNT(m.id)")
-			->from(MatchEntity::class, "m")
-			->where("m.playerWon = :player")
-			->setParameter("player", $userId)
-			->getQuery()
-			->getSingleScalarResult();
-	}
-
-
-	public function getLosesByUser(int $userId): ?int
-	{
-		return (int) $this->entityManager->createQueryBuilder()
-			->select("COUNT(m.id)")
-			->from(MatchEntity::class, "m")
-			->where("m.playerLost = :player")
-			->setParameter("player", $userId)
-			->getQuery()
-			->getSingleScalarResult();
-	}
-
-
-	public function getWinsAsBlackByUser(int $userId): ?int
-	{
-		return (int) $this->entityManager->createQueryBuilder()
-			->select("COUNT(m.id)")
-			->from(MatchEntity::class, "m")
-			->where("m.playerWon = :player")
-			->andWhere("m.playerWonColor = :color")
-			->setParameters(["player" => $userId, "color" => "black"])
-			->getQuery()
-			->getSingleScalarResult();
-	}
-
-
-	public function getWinsAsWhiteByUser(int $userId): ?int
-	{
-		return (int) $this->entityManager->createQueryBuilder()
-			->select("COUNT(m.id)")
-			->from(MatchEntity::class, "m")
-			->where("m.playerWon = :player")
-			->andWhere("m.playerWonColor = :color")
-			->setParameters(["player" => $userId, "color" => "white"])
-			->getQuery()
-			->getSingleScalarResult();
-	}
-
-
 	public function getBestGameByUser(int $userId): ?MatchEntity
 	{
 		return $this->entityManager->createQueryBuilder()

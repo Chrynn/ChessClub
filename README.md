@@ -1,10 +1,12 @@
 # Chess Club
 
+> For more info like "How to start project" etc. I recommend to visit project folder named `wiki`
+
 Description
 - Database of statistics for chess club
 
 Purpose
-- implemented task assignment for [Webwings.cz](https://webwings.cz/) to the job position PHP junior
+- [Task project](https://webwings.cz/kariera/testovaci-zadani-pro-php-vyvojare/) for PHP developers by [Webwings.cz](https://webwings.cz/)
 
 Used technology
 - PHP framework [Nette](https://nette.org/cs/)
@@ -18,15 +20,16 @@ Used tools
 - DevOps - Docker, Nginx, MariaDB
 - IDE - [PHPStorm](https://www.jetbrains.com/phpstorm/), VSCode
 - Design - XDesign
-- Docs - PHP [dokumentace](https://www.php.net/), Nette [dokumentace](https://doc.nette.org/), Stackoverflow atd.
-- Ubuntu for Windows (Virtual Linux OS)
+- Docs - PHP [docs](https://www.php.net/), Nette [docs](https://doc.nette.org/), Stackoverflow etc.
+- Ubuntu (Virtual OS)
 
 Coding standard
 - HTML `5`
 - CSS `3` - [BEM](https://www.vzhurudolu.cz/prirucka/bem) a [W3C](https://www.w3.org/Style/CSS/specs.en.html)
-- PHP `8.1` - clean [OOP](https://php.baraja.cz/uvod-do-oop) code
+- PHP `8.1` - Clean [OOP](https://php.baraja.cz/uvod-do-oop) code
 
 Signpost
 - app - `PHP` & `latte` files
-- wiki - useful docs about this project `REQUIRED`
-- www - assets like `css`, images & `javascript`
+- wiki - Useful docs about this project
+- www - Assets like `css`, images & `javascript`
+- design - Designed template of website layout

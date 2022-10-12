@@ -1,9 +1,18 @@
 <?php declare(strict_types = 1);
 
-namespace App\Model\Service\Match;
+namespace App\Model\Facade\Match;
+
+use App\Model\Service\Match\MatchService;
+use App\Model\Service\User\UserService;
 
 final class MatchFacade implements IMatchFacade
 {
+
+	public function __construct(
+		private readonly MatchService $matchService,
+		private readonly UserService $userService
+	) {}
+
 
 	/**
 	 * @param $match array<string, mixed>
@@ -42,6 +51,109 @@ final class MatchFacade implements IMatchFacade
 			"playerWonColor" => $playerWonColor,
 			"playerLostColor" => $playerLostColor
 		];
+	}
+
+
+	/**
+	 * @return array<string, mixed>|null
+	 */
+	public function getBestGameByUserResult(int $userId): ?array
+	{
+		$bestGame = $this->matchService->getBestGameByUser($userId);
+		if ($bestGame) {
+			$playerWon = $bestGame->getPlayerWon();
+			$playerLost = $bestGame->getPlayerLost();
+
+			return [
+				"playerWon" => $this->userService->getUserById($playerWon),
+				"playerLost" => $this->userService->getUserById($playerLost),
+				"playerWonMoves" => $bestGame->getPlayerWonMoves(),
+				"playerLostMoves" => $bestGame->getPlayerLostMoves(),
+				"playerWonColor" => $bestGame->getPlayerWonColor(),
+				"playerLostColor" => $bestGame->getPlayerLostColor()
+			];
+		} else {
+
+			return NULL;
+		}
+	}
+
+
+	/**
+	 * @return array<string, mixed>|null
+	 */
+	public function getBestMatchResult(): ?array
+	{
+		$matchEntity = $this->matchService->getBestMatch();
+		if ($matchEntity) {
+			$playerWon = $matchEntity->getPlayerWon();
+			$playerLost = $matchEntity->getPlayerLost();
+
+			return [
+				"playerWon" => $this->userService->getUserById($playerWon),
+				"playerLost" => $this->userService->getUserById($playerLost),
+				"playerWonMoves" => $matchEntity->getPlayerWonMoves(),
+				"playerLostMoves" => $matchEntity->getPlayerLostMoves(),
+				"date" => $matchEntity->getMatchDate()
+			];
+		} else {
+
+			return NULL;
+		}
+	}
+
+
+	/**
+	 * @return array<string, mixed>|NULL
+	 */
+	public function getWorstMatchResult(): ?array
+	{
+		$matchEntity = $this->matchService->getWorstMatch();
+		if ($matchEntity) {
+			$playerWon = $matchEntity->getPlayerWon();
+			$playerLost = $matchEntity->getPlayerLost();
+
+			return [
+				"playerWon" => $this->userService->getUserById($playerWon),
+				"playerLost" => $this->userService->getUserById($playerLost),
+				"playerWonMoves" => $matchEntity->getPlayerWonMoves(),
+				"playerLostMoves" => $matchEntity->getPlayerLostMoves(),
+				"date" => $matchEntity->getMatchDate()
+			];
+		} else {
+
+			return NULL;
+		}
+	}
+
+
+	/**
+	 * @return array<string, mixed>|NULL
+	 */
+	public function getTopPlayersResult(): ?array
+	{
+		$topPlayers = $this->userService->getUsersByWin(10);
+		if (!empty($topPlayers)) {
+			$topMatchesResult = [];
+
+			foreach ($topPlayers as $topPlayer) {
+
+				if ($topPlayer->getWinCount() !== NULL) {
+					$topMatchesResult[] = [
+						"wins" => $topPlayer->getWinCount(),
+						"player" => $topPlayer->getNickname()
+					];
+				} else {
+					break;
+				}
+			}
+			array_unshift($topMatchesResult, "");
+
+			return $topMatchesResult;
+		} else {
+
+			return NULL;
+		}
 	}
 
 }

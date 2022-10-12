@@ -15,33 +15,36 @@ git clone git@github.com:Chrynn/Chess-Club.git
 ### Starting the project
 > now we got main project files, but we need to add a few things
 
-- call `make up:build` for build Docker images (required for first time)
+- Create `local.neon` file into `config` folder with content below
+- You can use `touch` and then `nano` commands or do it manually
+
 ```
-make up:build
-```
-- call `make up` to start project on `localhost:90`
-```
-make up:build
+parameters:
+
+database:
+    dsn: 'mysql:host=127.0.0.1;dbname=test'
+    user: root
+    password: root
 ```
 
-- create folder `log` for Nette error messages
-```
-mkdir log
-```
-
-- create folder `cache` for Nette stuff (containers etc.)
-```
-mkdir cache
-```
-- call Makefile command `make start` which will:
-1. give required permissions to the folders we created
-2. setup composer extensions
+- Call Makefile command `make start` which will:
+1. setup Docker container and image
+2. give required permissions to `log` and `cache` folders
+3. setup composer extensions as `vendor` folder
+4. fill database with test data
 
 ```
 make start
 ```
+- Now find the project properly running in browser on URL address `localhost:90` and database on `localhost:10000`
+- **Make sure** you do not have running some other project on port with number `90`
+> We finished, good luck with project testing!
 
-- call `make init` to put data into Database
+- If you want to turn project off call `make down` command
 ```
-make init
+make down
+```
+- Then to turn on back call `make up`
+```
+make up
 ```

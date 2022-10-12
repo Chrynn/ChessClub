@@ -43,6 +43,31 @@ class UserEntity
 	 */
 	protected ?string $number;
 
+	/**
+	 * @ORM\Column(type="integer", nullable=true)
+	 */
+	protected ?int $winCount;
+
+	/**
+	 * @ORM\Column(type="integer", nullable=true)
+	 */
+	protected ?int $loseCount;
+
+	/**
+	 * @ORM\Column(type="integer", nullable=true)
+	 */
+	protected ?int $winsAsWhite;
+
+	/**
+	 * @ORM\Column(type="integer", nullable=true)
+	 */
+	protected ?int $winsAsBlack;
+
+	/**
+	 * @ORM\Column(type="datetime", nullable=false)
+	 */
+	protected \DateTime $joinedAt;
+
 
 	public function setId(int $id): void
 	{
@@ -113,6 +138,66 @@ class UserEntity
 	public function setNumber(?string $number): void
 	{
 		$this->number = $number;
+	}
+
+
+	public function getWinCount(): ?int
+	{
+		return $this->winCount;
+	}
+
+
+	public function setWinCount(?int $winCount): void
+	{
+		$this->winCount = $winCount;
+	}
+
+
+	public function getLoseCount(): ?int
+	{
+		return $this->loseCount;
+	}
+
+
+	public function setLoseCount(?int $loseCount): void
+	{
+		$this->loseCount = $loseCount;
+	}
+
+
+	public function getWinsAsWhite(): ?int
+	{
+		return $this->winsAsWhite;
+	}
+
+
+	public function setWinsAsWhite(?int $winsAsWhite): void
+	{
+		$this->winsAsWhite = $winsAsWhite;
+	}
+
+
+	public function getWinsAsBlack(): ?int
+	{
+		return $this->winsAsBlack;
+	}
+
+
+	public function setWinsAsBlack(?int $winsAsBlack): void
+	{
+		$this->winsAsBlack = $winsAsBlack;
+	}
+
+
+	public function setJoinedAt(\DateTime $joinedAt): void
+	{
+		$this->joinedAt = $joinedAt;
+	}
+
+
+	public function getJoinedAt(): \DateTime
+	{
+		return $this->joinedAt;
 	}
 
 }

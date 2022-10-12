@@ -6,14 +6,14 @@
             <div class="flexer">
                 <div class="menu__column-one">
                     <ul class="menu__list">
-                        <li class="menu__item"><a n:href=":User:Homepage:" class="menu__link{if $presenter->isLinkCurrent(":User:Homepage:")} menu__link--active{/if}">My stats</a></li>
-                        <li class="menu__item"><a n:href=":User:TopPlayers:" class="menu__link{if $presenter->isLinkCurrent(":User:TopPlayers:")} menu__link--active{/if}">Top players</a></li>
+                        <li class="menu__item"><a n:href=":User:Homepage:" class="menu__link{if $presenter->isLinkCurrent(":User:Homepage:")} menu__link--active{/if}">Dashboard</a></li>
+                        <li class="menu__item"><a n:href=":User:Leaderboard:" class="menu__link{if $presenter->isLinkCurrent(":User:Leaderboard:")} menu__link--active{/if}">Leaderboard</a></li>
                     </ul>
                 </div>
                 <div class="menu__column-two">
                     <div class="menu__settings">
-                        <a n:href=":User:Settings:" class="menu__link-settings{if $presenter->isLinkCurrent(":User:Settings:")} menu__link-settings--active{/if}">
-                            <img src="../img/settings.jpg" alt="settings-icon" class="menu__image-settings">
+                        <a n:href=":User:Settings:" class="menu__link-settings{if $presenter->isLinkCurrent(":User:Settings:")} menu__link-settings--active{/if}" title="Settings">
+                            <img src="../img/icon-settings.jpg" alt="icon-settings" class="menu__image-settings">
                         </a>
                     </div>
                 </div>

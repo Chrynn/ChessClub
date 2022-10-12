@@ -98,11 +98,13 @@
         background: $colorQuinary;
         border: none;
         border-radius: 10px;
-        padding: 10px 50px;
+        padding: 0 50px;
         display: block;
         text-transform: uppercase;
         cursor: pointer;
         transition: 0.22s;
+        align-items: center;
+        height: 45px;
 
         &:hover {
             background: $shadeQuinary;

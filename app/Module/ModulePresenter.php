@@ -5,13 +5,15 @@ namespace App\Module;
 use App\Model\Facade\Auth\AuthorizationFacade;
 use Nette\Application\UI\Presenter;
 
-class ModulePresenter extends Presenter
+abstract class ModulePresenter extends Presenter
 {
 
 	private AuthorizationFacade $authorizationFacade;
 
 
-	public function __construct(AuthorizationFacade $authorizationFacade)
+	public function __construct(
+		AuthorizationFacade $authorizationFacade
+	)
 	{
 		parent::__construct();
 		$this->authorizationFacade = $authorizationFacade;
@@ -22,10 +24,11 @@ class ModulePresenter extends Presenter
 	{
 		parent::beforeRender();
 		$loginStatus = $this->authorizationFacade->isLoggedIn();
-		$this->getTemplate()->isLogged = $loginStatus;
 		if ($loginStatus) {
 			$this->getTemplate()->loggedUser = $this->authorizationFacade->getLoggedUser();
 		}
+
+		$this->getTemplate()->isLogged = $loginStatus;
 	}
 
 

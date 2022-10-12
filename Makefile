@@ -43,13 +43,16 @@ reset:
 	make up
 	make cache
 
-# for this you can use makefile or git alias
+# regenerate composer.json (use makefile or git alias)
 load:
 	docker-compose -f .docker/docker-compose.yml exec php composer dump-autoload
 
 # first step after git clone
 start:
-	docker-compose -f .docker/docker-compose.yml exec php composer update
+	make up:build
+	make up
+	docker-compose -f .docker/docker-compose.yml exec php composer install
 	docker-compose -f .docker/docker-compose.yml exec php chmod 777 temp
 	docker-compose -f .docker/docker-compose.yml exec php chmod 777 log
 	docker-compose -f .docker/docker-compose.yml exec php chmod 777 bin/console
+	make init

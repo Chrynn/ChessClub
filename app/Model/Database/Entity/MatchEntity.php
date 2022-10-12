@@ -51,7 +51,7 @@ class MatchEntity
 	/**
 	 * @ORM\Column(type="datetime", nullable=false)
 	 */
-	protected \DateTime $matchDate;
+	protected \DateTime $playedAt;
 
 
 	public function getId(): int
@@ -134,13 +134,13 @@ class MatchEntity
 
 	public function getMatchDate(): \DateTime
 	{
-		return $this->matchDate;
+		return $this->playedAt;
 	}
 
 
-	public function setMatchDate(\DateTime $matchDate): void
+	public function setMatchDate(\DateTime $playedAt): void
 	{
-		$this->matchDate = $matchDate;
+		$this->playedAt = $playedAt;
 	}
 
 }
