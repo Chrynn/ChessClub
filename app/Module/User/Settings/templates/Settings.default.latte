@@ -5,7 +5,7 @@
     <div class="container-intern">
         <div class="settings__heading-wrap">
             <h1 class="settings__heading-main" n:block="title">Settings</h1>
-            <p class="settings__heading-side">Joined at {$loggedUser->getJoinedAt()|date:"d/m/y"}</p>
+            <p class="settings__heading-side">Joined {$loggedUser->getJoinedAt()|date:"d/m/y"}</p>
         </div>
         <div class="settings__form-one">
             {control settingsForm}
