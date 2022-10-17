@@ -12,7 +12,7 @@ Used technology
 - PHP framework [Nette](https://nette.org/cs/)
 - SQL database [ORM](https://cs.wikipedia.org/wiki/Objektov%C4%9B_rela%C4%8Dn%C3%AD_mapov%C3%A1n%C3%AD) [Doctrine](https://www.doctrine-project.org/) (nettrine)
 - Javascript
-- HTML a CSS in combination with [Latte](https://latte.nette.org/cs/), SCSS (sass)
+- HTML in combination with [Latte](https://latte.nette.org/cs/) and SASS (scss)
 - [Neon](https://doc.nette.org/cs/neon/format), [Markdown](https://www.markdownguide.org/)
 - Git, Github
 
