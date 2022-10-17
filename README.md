@@ -1,6 +1,7 @@
 # Chess Club
 
-> For more info like "How to start project" etc. I recommend to visit project folder named `wiki`
+> - Initial documentation of the project
+> - For more info like "How to start project" etc. I recommend to visit project folder named `wiki`
 
 Description
 - Database of statistics for chess club
