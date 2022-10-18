@@ -7,7 +7,7 @@ Description
 - Database of statistics for chess club
 
 Purpose
-- [Task project](https://webwings.cz/kariera/testovaci-zadani-pro-php-vyvojare/) for PHP developers by [Webwings.cz](https://webwings.cz/)
+- [Task project](https://webwings.cz/kariera/testovaci-zadani-pro-php-vyvojare/) for PHP developers from [Webwings.cz](https://webwings.cz/)
 
 Used technology
 - PHP framework [Nette](https://nette.org/cs/)
